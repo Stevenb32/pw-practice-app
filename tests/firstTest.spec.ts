@@ -4,7 +4,7 @@ import { basename } from "path";
 
 //hook to run before each test to remove duplicate code
 test.beforeEach(async ({ page }) => {
-  await page.goto("http://localhost:4200/");
+  await page.goto("/");
   await page.getByText("Forms").click();
   await page.getByText("Form Layouts").click();
 });
@@ -157,7 +157,7 @@ test('assertions', async({page}) => {
   await expect(basicFormButton).toHaveText('Submit')
 
   //soft assertion
-   await expect.soft(basicFormButton).toHaveText('Submit5')
+   await expect.soft(basicFormButton).toHaveText('Submit')
    await basicFormButton.click()
 
 })

@@ -32,6 +32,7 @@ npm-debug.log
 testem.log
 /typings
 /docs
+/screenshots
 
 # e2e
 /e2e/*.js
@@ -40,6 +41,7 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+.env
 
 # Playwright
 node_modules/
