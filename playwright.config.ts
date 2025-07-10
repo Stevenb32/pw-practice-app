@@ -37,7 +37,7 @@ export default defineConfig<TestOptions>({
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "on-first-retry",
     video: {
-      mode: "on",
+      mode: "off",
       size: { width: 1920, height: 1080 },
     },
   },
@@ -73,6 +73,14 @@ export default defineConfig<TestOptions>({
     {
       name: "webkit",
       use: { ...devices["Desktop Safari"] },
+    },
+
+    {
+      name: "pageObjectFullScreen",
+      testMatch: 'usePageObject.spec.ts',
+      use: {
+        viewport: {width: 1920, height: 1080}
+      }
     },
 
     /* Test against mobile viewports. */
